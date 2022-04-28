@@ -14,6 +14,9 @@
 		3FF692742819068300673C7B /* NC1_Chlorganizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FF692722819068300673C7B /* NC1_Chlorganizer.xcdatamodeld */; };
 		3FF692762819068500673C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FF692752819068500673C7B /* Assets.xcassets */; };
 		3FF692792819068500673C7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF692772819068500673C7B /* LaunchScreen.storyboard */; };
+		3FF692AA281981F400673C7B /* ClothesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF692A9281981F400673C7B /* ClothesCell.swift */; };
+		3FF692AC2819820800673C7B /* ClothesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF692AB2819820800673C7B /* ClothesTableView.swift */; };
+		3FF692AE281984EE00673C7B /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF692AD281984EE00673C7B /* Clothes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		3FF692752819068500673C7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FF692782819068500673C7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FF6927A2819068500673C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FF692A9281981F400673C7B /* ClothesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesCell.swift; sourceTree = "<group>"; };
+		3FF692AB2819820800673C7B /* ClothesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesTableView.swift; sourceTree = "<group>"; };
+		3FF692AD281984EE00673C7B /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				3FF692772819068500673C7B /* LaunchScreen.storyboard */,
 				3FF6927A2819068500673C7B /* Info.plist */,
 				3FF692722819068300673C7B /* NC1_Chlorganizer.xcdatamodeld */,
+				3FF692AD281984EE00673C7B /* Clothes.swift */,
+				3FF692A9281981F400673C7B /* ClothesCell.swift */,
+				3FF692AB2819820800673C7B /* ClothesTableView.swift */,
 			);
 			path = "NC1-Chlorganizer";
 			sourceTree = "<group>";
@@ -142,7 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF6926E2819068300673C7B /* ViewController.swift in Sources */,
+				3FF692AE281984EE00673C7B /* Clothes.swift in Sources */,
 				3FF6926A2819068300673C7B /* AppDelegate.swift in Sources */,
+				3FF692AC2819820800673C7B /* ClothesTableView.swift in Sources */,
+				3FF692AA281981F400673C7B /* ClothesCell.swift in Sources */,
 				3FF692742819068300673C7B /* NC1_Chlorganizer.xcdatamodeld in Sources */,
 				3FF6926C2819068300673C7B /* SceneDelegate.swift in Sources */,
 			);
