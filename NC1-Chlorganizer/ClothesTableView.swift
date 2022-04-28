@@ -178,7 +178,7 @@ class ClothesTableView: UITableViewController, UISearchBarDelegate, UISearchResu
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
             // Which person to remove
-            let personToRemove = clothesList[indexPath.row+1]
+            let personToRemove = clothesList[indexPath.row]
             
             // Remove the person
 //            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Clothes")
