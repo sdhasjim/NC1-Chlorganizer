@@ -13,12 +13,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var storageTextField: UITextField!
     @IBOutlet weak var statusToggleSwitch: UISwitch!
+    @IBOutlet weak var deleteButton: UIButton!
     
     var selectedClothes: Clothes? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        deleteButton.alpha = 0
         if (selectedClothes != nil) {
+            deleteButton.alpha = 1
             nameTextField.text = selectedClothes?.name
             storageTextField.text = selectedClothes?.storage
             statusToggleSwitch.isOn = selectedClothes!.statusAvailability
@@ -45,7 +48,6 @@ class ViewController: UIViewController {
 //            else if statusToggle.isOn == false {
 //                newClothes.statusAvailability = "unavailable"
 //            }
-                
 
             do {
                 try context.save()

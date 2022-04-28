@@ -12,8 +12,16 @@ import CoreData
 var clothesList = [Clothes]()
 var filteredClothes = [Clothes]()
 
-class ClothesTableView: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
 
+class ClothesTableView: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
+    
+//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//    let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    var selectedClothes: Clothes? = nil
+    
     let searchController = UISearchController()
     
     var firstLoad = true
@@ -42,21 +50,22 @@ class ClothesTableView: UITableViewController, UISearchBarDelegate, UISearchResu
     
     override func viewDidLoad() {
         initSearchController()
-        if(firstLoad) {
-            firstLoad = false
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Clothes")
-            do {
-                let results: NSArray = try context.fetch(request) as NSArray
-                for result in results {
-                    let clothes = result as! Clothes
-                    clothesList.append(clothes)
-                }
-            } catch {
-                print("fetch failed")
-            }
-        }
+//        if(firstLoad) {
+//            firstLoad = false
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+//            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Clothes")
+//            do {
+//                let results: NSArray = try context.fetch(request) as NSArray
+//                for result in results {
+//                    let clothes = result as! Clothes
+//                    clothesList.append(clothes)
+//                }
+//            } catch {
+//                print("fetch failed")
+//            }
+//        }
+        fetchPeople()
     }
     
     func initSearchController() {
@@ -113,6 +122,8 @@ class ClothesTableView: UITableViewController, UISearchBarDelegate, UISearchResu
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        deleteButton.alpha = 1
+        
         let clothesCell = tableView.dequeueReusableCell(withIdentifier: "clothesCellID", for: indexPath) as! ClothesCell
         
         let thisClothes: Clothes!
@@ -148,29 +159,43 @@ class ClothesTableView: UITableViewController, UISearchBarDelegate, UISearchResu
         self.performSegue(withIdentifier: "editClothes", sender: self)
     }
     
-    var selectedClothes: Clothes? = nil
+//    var selectedClothes: Clothes? = nil
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//            let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-//
-//            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Clothes")
-//            do {
-//                let results: NSArray = try context.fetch(request) as NSArray
-//                for result in results {
-//                    let clothes = result as! Clothes
-//                    if (clothes == selectedClothes) {
-//                        clothes.deletedDate = Date()
-//                        try context.save()
-//                    }
-//                }
-//
-//            } catch {
-//                print("fetch failed")
-//            }
-//            print("deleted")
+    func fetchPeople() {
+        
+        // Fetch the data from Core Data to display in the tableView
+        do {
+            clothesList = try context.fetch(Clothes.fetchRequest())
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        } catch {
+            print(error)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            // Which person to remove
+            let personToRemove = clothesList[indexPath.row+1]
+            
+            // Remove the person
+//            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Clothes")
+            
+            self.context.delete(personToRemove)
+            
+            // Save the data
+            do {
+                try self.context.save()
+            } catch {
+                
+            }
+            
+            // Re-fetch the data
+            self.fetchPeople()
+        }
+        return UISwipeActionsConfiguration(actions: [action])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
