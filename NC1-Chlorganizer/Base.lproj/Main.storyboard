@@ -49,6 +49,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="imageStatus" destination="QwX-qd-Wu4" id="xOf-Ud-Luz"/>
                                     <outlet property="nameLabel" destination="93r-PN-Yov" id="NSb-cB-R8n"/>
                                     <outlet property="storageLabel" destination="OaR-OY-DpR" id="Kgi-Zt-Z8N"/>
                                 </connections>
@@ -168,6 +169,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="FeH-5L-UXZ" id="shK-XG-ZBe"/>
+                        <outlet property="statusToggleSwitch" destination="41x-Ny-1Ys" id="nAD-NL-CIl"/>
                         <outlet property="storageTextField" destination="bgb-zk-724" id="nWZ-XN-nIv"/>
                     </connections>
                 </viewController>

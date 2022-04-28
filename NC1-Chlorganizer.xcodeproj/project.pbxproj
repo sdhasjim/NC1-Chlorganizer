@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F556733281A2AB7009D58ED /* Clothes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F556731281A2AB7009D58ED /* Clothes+CoreDataClass.swift */; };
+		3F556734281A2AB7009D58ED /* Clothes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F556732281A2AB7009D58ED /* Clothes+CoreDataProperties.swift */; };
 		3FF6926A2819068300673C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF692692819068300673C7B /* AppDelegate.swift */; };
 		3FF6926C2819068300673C7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6926B2819068300673C7B /* SceneDelegate.swift */; };
 		3FF6926E2819068300673C7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6926D2819068300673C7B /* ViewController.swift */; };
@@ -16,10 +18,11 @@
 		3FF692792819068500673C7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FF692772819068500673C7B /* LaunchScreen.storyboard */; };
 		3FF692AA281981F400673C7B /* ClothesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF692A9281981F400673C7B /* ClothesCell.swift */; };
 		3FF692AC2819820800673C7B /* ClothesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF692AB2819820800673C7B /* ClothesTableView.swift */; };
-		3FF692AE281984EE00673C7B /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF692AD281984EE00673C7B /* Clothes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F556731281A2AB7009D58ED /* Clothes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Clothes+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3F556732281A2AB7009D58ED /* Clothes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Clothes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3FF692662819068300673C7B /* NC1-Chlorganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NC1-Chlorganizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF692692819068300673C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FF6926B2819068300673C7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +34,6 @@
 		3FF6927A2819068500673C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FF692A9281981F400673C7B /* ClothesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesCell.swift; sourceTree = "<group>"; };
 		3FF692AB2819820800673C7B /* ClothesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesTableView.swift; sourceTree = "<group>"; };
-		3FF692AD281984EE00673C7B /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F556735281A2AD0009D58ED /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F556731281A2AB7009D58ED /* Clothes+CoreDataClass.swift */,
+				3F556732281A2AB7009D58ED /* Clothes+CoreDataProperties.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
 		3FF6925D2819068300673C7B = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +75,7 @@
 		3FF692682819068300673C7B /* NC1-Chlorganizer */ = {
 			isa = PBXGroup;
 			children = (
+				3F556735281A2AD0009D58ED /* Data Model */,
 				3FF692692819068300673C7B /* AppDelegate.swift */,
 				3FF6926B2819068300673C7B /* SceneDelegate.swift */,
 				3FF6926D2819068300673C7B /* ViewController.swift */,
@@ -72,7 +84,6 @@
 				3FF692772819068500673C7B /* LaunchScreen.storyboard */,
 				3FF6927A2819068500673C7B /* Info.plist */,
 				3FF692722819068300673C7B /* NC1_Chlorganizer.xcdatamodeld */,
-				3FF692AD281984EE00673C7B /* Clothes.swift */,
 				3FF692A9281981F400673C7B /* ClothesCell.swift */,
 				3FF692AB2819820800673C7B /* ClothesTableView.swift */,
 			);
@@ -150,12 +161,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F556734281A2AB7009D58ED /* Clothes+CoreDataProperties.swift in Sources */,
 				3FF6926E2819068300673C7B /* ViewController.swift in Sources */,
-				3FF692AE281984EE00673C7B /* Clothes.swift in Sources */,
 				3FF6926A2819068300673C7B /* AppDelegate.swift in Sources */,
 				3FF692AC2819820800673C7B /* ClothesTableView.swift in Sources */,
 				3FF692AA281981F400673C7B /* ClothesCell.swift in Sources */,
 				3FF692742819068300673C7B /* NC1_Chlorganizer.xcdatamodeld in Sources */,
+				3F556733281A2AB7009D58ED /* Clothes+CoreDataClass.swift in Sources */,
 				3FF6926C2819068300673C7B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

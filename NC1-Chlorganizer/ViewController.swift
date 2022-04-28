@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var storageTextField: UITextField!
+    @IBOutlet weak var statusToggleSwitch: UISwitch!
     
     var selectedClothes: Clothes? = nil
     
@@ -20,6 +21,8 @@ class ViewController: UIViewController {
         if (selectedClothes != nil) {
             nameTextField.text = selectedClothes?.name
             storageTextField.text = selectedClothes?.storage
+            statusToggleSwitch.isOn = selectedClothes!.statusAvailability
+//            statusToggleSwitch.isOn = ((selectedClothes?.statusAvailability) != nil)
 //            statusToggle.isEnabled = selectedClothes?.statusAvailability
         }
         // Do any additional setup after loading the view.
@@ -32,9 +35,10 @@ class ViewController: UIViewController {
         if (selectedClothes == nil) {
             let entity = NSEntityDescription.entity(forEntityName: "Clothes", in: context)
             let newClothes = Clothes(entity: entity!, insertInto: context)
-            newClothes.id = clothesList.count as NSNumber
+            newClothes.id = Int32(clothesList.count)
             newClothes.name = nameTextField.text
             newClothes.storage = storageTextField.text
+            newClothes.statusAvailability = statusToggleSwitch.isOn
 //            if statusToggle.isOn == true {
 //                newClothes.statusAvailability = "available"
 //            }
@@ -61,6 +65,7 @@ class ViewController: UIViewController {
                     if (clothes == selectedClothes) {
                         clothes.name = nameTextField.text
                         clothes.storage = storageTextField.text
+                        clothes.statusAvailability = statusToggleSwitch.isOn
                         try context.save()
                         navigationController?.popViewController(animated: true)
                     }
@@ -91,15 +96,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
-//    @IBAction func switchChange(_ sender: Any) {
-//        if (statusToggle.isEnabled) {
-//            statusToggle.isOn = true
-//        }
-//        else {
-//            statusToggle.isOn = false
-//        }
-//    }
     
 }
 

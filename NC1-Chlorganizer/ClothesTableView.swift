@@ -14,6 +14,7 @@ var clothesList = [Clothes]()
 class ClothesTableView: UITableViewController {
     
     var firstLoad = true
+    var viewController = ViewController()
     
     func nonDeletedClothes() -> [Clothes] {
         var noDeleteClothesList = [Clothes] ()
@@ -53,6 +54,12 @@ class ClothesTableView: UITableViewController {
         
         clothesCell.nameLabel.text = thisClothes.name
         clothesCell.storageLabel.text = thisClothes.storage
+        if (thisClothes.statusAvailability) {
+            clothesCell.imageStatus.image = UIImage(named: "available")
+        } else {
+            clothesCell.imageStatus.image = UIImage(named: "unavailable")
+        }
+
         
         return clothesCell
     }

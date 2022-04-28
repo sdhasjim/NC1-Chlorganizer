@@ -11,4 +11,5 @@ import UIKit
 class ClothesCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var storageLabel: UILabel!
+    @IBOutlet weak var imageStatus: UIImageView!
 }
